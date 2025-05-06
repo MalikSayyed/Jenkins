@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Using the credentials stored in Jenkins
-                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'b032e0aa-a960-4f24-a729-929ecd864aac']]) {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'jenkins-aws']]) {
                         // Sync the current directory (where the files are cloned) to S3
                         sh """
                         echo "Deploying to S3 bucket ${S3_BUCKET_NAME}"
